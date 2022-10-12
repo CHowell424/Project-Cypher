@@ -51,11 +51,12 @@ const substitutionModule = (function () {
     const alpha =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     let newMessage ="";
     if(subAlpha.length!=26){return false;};
-    if(encode){newMessage = cypher(input,alpha,subAlpha)
-    }else{newMessage =deCypher(input,alpha,subAlpha)}
+    if(encode){newMessage = cypher(input.toLowerCase(),alpha,subAlpha)
+    }else{newMessage =deCypher(input.toLowerCase(),alpha,subAlpha)}
     return newMessage;
   }
-  console.log(substitution("evoo7","ajr0v(her^lo!b7ptysne'.,/%",false));
+  let actual = substitution("This is a secret meesage", "/.,?><';!@#$%^&*()_+-=~`CS");
+        console.log(actual);
   return {
     substitution,
   };
